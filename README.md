@@ -77,6 +77,100 @@ Generate      Rewrite Query
 
 ---
 
+# API Preview
+
+## Swagger Documentation
+
+Add screenshot here:
+
+```text
+screenshots/swagger-ui.png
+```
+
+```md
+![Swagger UI](screenshots/swagger-ui.png)
+```
+
+---
+
+## Query Response Example
+
+Add screenshot of successful `/query` response.
+
+Example query:
+
+```json
+{
+  "query": "What is LangGraph?"
+}
+```
+
+Screenshot path:
+
+```text
+screenshots/query-response.png
+```
+
+Markdown:
+
+```md
+![Query Response](screenshots/query-response.png)
+```
+
+---
+
+## Upload Endpoint
+
+Add screenshot showing successful PDF/TXT upload.
+
+Screenshot path:
+
+```text
+screenshots/upload-endpoint.png
+```
+
+Markdown:
+
+```md
+![Upload Endpoint](screenshots/upload-endpoint.png)
+```
+
+---
+
+## Self-Corrective Fallback Response
+
+Add screenshot showing fallback behavior for unsupported queries.
+
+Example:
+
+```json
+{
+  "query": "What is Django?"
+}
+```
+
+Expected response:
+
+```json
+{
+  "answer": "I could not find relevant information in the indexed documents."
+}
+```
+
+Screenshot path:
+
+```text
+screenshots/fallback-response.png
+```
+
+Markdown:
+
+```md
+![Fallback Response](screenshots/fallback-response.png)
+```
+
+---
+
 # API Endpoints
 
 ## POST `/query`
@@ -199,6 +293,7 @@ agentic-rag-doc-assistant/
 │
 ├── data/
 ├── chroma_db/
+├── screenshots/
 ├── README.md
 ├── requirements.txt
 └── .env
