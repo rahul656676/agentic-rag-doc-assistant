@@ -1,0 +1,7 @@
+FastAPI is a modern Python web framework for building APIs.
+
+FastAPI provides automatic OpenAPI documentation.
+
+FastAPI is based on standard Python type hints.
+
+FastAPI is very fast and easy to use.

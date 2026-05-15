@@ -1,0 +1,7 @@
+LangGraph is a framework for building stateful multi-step AI workflows.
+
+LangGraph allows developers to create graph-based AI systems.
+
+LangGraph supports conditional routing and memory.
+
+LangGraph is commonly used for agentic RAG systems.
