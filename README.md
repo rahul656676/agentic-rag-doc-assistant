@@ -1,80 +1,90 @@
 # Agentic RAG Documentation Assistant
 
-An advanced Agentic Retrieval-Augmented Generation (RAG) system built using LangGraph, FastAPI, ChromaDB, and Groq LLMs.
+An advanced **Agentic Retrieval-Augmented Generation (RAG)** system built using **LangGraph, FastAPI, ChromaDB, and Groq LLMs**.
 
-This project implements a self-corrective AI workflow capable of:
-- semantic document retrieval
-- document relevance grading
-- conditional query rewriting
-- grounded answer generation
-- dynamic PDF/TXT ingestion
+This project implements a **self-corrective AI workflow** capable of semantic retrieval, document relevance grading, conditional query rewriting, and grounded response generation.
 
 ---
 
-# Features
+# Key Features
 
 ## Agentic RAG Workflow
-- Built using LangGraph
-- Multi-step AI workflow execution
-- Stateful graph orchestration
+
+* Built using LangGraph
+* Stateful multi-step AI workflow orchestration
+* Conditional graph routing
+* Retry-based execution flow
 
 ## Semantic Retrieval
-- ChromaDB vector database
-- Sentence-transformer embeddings
-- Similarity-based retrieval
+
+* ChromaDB vector database
+* Sentence-transformer embeddings
+* Similarity-based semantic search
 
 ## Self-Corrective RAG
-- LLM-based document grading
-- Query rewriting
-- Retry mechanism
-- Hallucination reduction
 
-## Dynamic Document Upload
-- Upload TXT/PDF files
-- Automatic ingestion
-- Automatic vector indexing
+* LLM-based document relevance grading
+* Automatic query rewriting
+* Retry mechanism for failed retrievals
+* Hallucination reduction through grounded generation
+
+## Dynamic Document Ingestion
+
+* Upload TXT/PDF documents dynamically
+* Automatic chunking and indexing
+* Real-time vector database updates
 
 ## FastAPI Backend
-- REST API endpoints
-- Swagger documentation
-- JSON responses
+
+* RESTful API architecture
+* Swagger/OpenAPI documentation
+* Structured JSON responses
 
 ---
 
 # Tech Stack
 
-- FastAPI
-- LangGraph
-- ChromaDB
-- LangChain
-- Groq LLM
-- Sentence Transformers
-- Python
+* Python
+* FastAPI
+* LangGraph
+* LangChain
+* ChromaDB
+* Groq LLM
+* Sentence Transformers
 
 ---
 
 # Workflow Architecture
 
+```text
 User Query
-↓
+     ↓
 Query Analyzer
-↓
+     ↓
 Retriever
-↓
+     ↓
 Document Grader
-↓
+     ↓
 Relevant Documents?
-├── YES → Generate Answer
-└── NO → Rewrite Query → Retry Retrieval
+   ↙            ↘
+ YES             NO
+  ↓               ↓
+Generate      Rewrite Query
+ Answer             ↓
+  ↓            Retry Retrieval
+ Final Answer
+```
 
 ---
 
 # API Endpoints
 
-## POST /query
-Query the RAG system.
+## POST `/query`
+
+Query the Agentic RAG system.
 
 ### Example Request
+
 ```json
 {
   "query": "What is LangGraph?"
@@ -83,17 +93,20 @@ Query the RAG system.
 
 ---
 
-## POST /upload
-Upload TXT/PDF documents for indexing.
+## POST `/upload`
+
+Upload TXT/PDF documents for automatic ingestion and indexing.
 
 ---
 
-## GET /documents
-Returns total indexed documents.
+## GET `/documents`
+
+Returns indexed document statistics.
 
 ---
 
-## POST /feedback
+## POST `/feedback`
+
 Submit user feedback.
 
 ---
@@ -103,7 +116,7 @@ Submit user feedback.
 ## Clone Repository
 
 ```bash
-git clone <your-repo-url>
+git clone <your-repository-url>
 cd agentic-rag-doc-assistant
 ```
 
@@ -149,13 +162,24 @@ uvicorn app.main:app --reload
 
 ---
 
-# Swagger API Docs
+# Swagger API Documentation
 
-Open:
+Open in browser:
 
 ```text
 http://127.0.0.1:8000/docs
 ```
+
+---
+
+# Example Capabilities
+
+* Semantic document retrieval
+* Query rewriting for failed retrievals
+* Grounded answer generation
+* PDF/TXT ingestion pipeline
+* Retrieval score transparency
+* Self-corrective AI workflows
 
 ---
 
@@ -165,13 +189,13 @@ http://127.0.0.1:8000/docs
 agentic-rag-doc-assistant/
 │
 ├── app/
+│   ├── ingestion/
 │   ├── nodes/
 │   ├── services/
-│   ├── ingestion/
 │   ├── utils/
 │   ├── graph.py
-│   ├── state.py
-│   └── main.py
+│   ├── main.py
+│   └── state.py
 │
 ├── data/
 ├── chroma_db/
@@ -184,12 +208,13 @@ agentic-rag-doc-assistant/
 
 # Future Improvements
 
-- Streamlit/React frontend
-- Hybrid search
-- Reranking
-- Multi-agent workflows
-- Conversation memory
-- Docker deployment
+* Streamlit/React frontend
+* Hybrid search pipelines
+* Reranking systems
+* Conversation memory
+* Multi-agent workflows
+* Docker deployment
+* Cloud deployment
 
 ---
 
